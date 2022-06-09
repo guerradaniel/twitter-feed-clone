@@ -12,4 +12,8 @@ export class FeedComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public delete() {
+    console.log('fui clicado');
+  }
+
 }

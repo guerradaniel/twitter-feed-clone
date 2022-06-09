@@ -1,61 +1,156 @@
-<section class="p-3 twitter-background">
-    <div class="card">
-        <div class="card-header d-flex justify-content-between">
+<div class="p-3 twitter-background">
+    <section>
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between">
 
-            <h5>Página Inicial</h5>
+                <h5>Página Inicial</h5>
 
-            <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined">
                 auto_awesome
                 </span>
-        </div>
-
-        <div class="card-body d-flex justify-content-between">
-            <div class="col-2">
-                <p>ft perfil</p>
             </div>
-            <div class="col-10">
-                <div class="form-group col-12">
-                    <textarea id="textoTweet" class="form-control insert-tweet p-0" rows="1" placeholder="O que está acontecendo?"></textarea>
+
+            <div class="card-body d-flex justify-content-between">
+                <div class="col-2">
+                    <p>ft perfil</p>
                 </div>
-                <div class="d-flex type-visualization mb-4">
-                    <div class="me-1">
-                        <span class="material-symbols-outlined" style="font-size: 15px;">
+                <div class="col-10">
+                    <div class="form-group col-12">
+                        <textarea id="textoTweet" class="form-control insert-tweet p-0" rows="1" placeholder="O que está acontecendo?"></textarea>
+                    </div>
+                    <div class="d-flex type-visualization mb-4">
+                        <div class="me-1">
+                            <span class="material-symbols-outlined" style="font-size: 15px;">
                       public
                       </span>
+                        </div>
+                        <p class="type-visualization-public fw-bold"> Qualquer pessoa pode responder</p>
                     </div>
-                    <p class="type-visualization-public fw-bold"> Qualquer pessoa pode responder</p>
-                </div>
-                <hr class="divider-line">
-                <div #lineIcons class="d-flex justify-content-between twitter-color twitter-icons">
-                    <div>
+                    <hr class="divider-line">
+                    <div class="d-flex justify-content-between twitter-color twitter-icons">
+                        <div>
 
-                        <span class="material-symbols-outlined me-2">
+                            <span class="material-symbols-outlined init-icons me-2">
                         image
                         </span>
 
-                        <span class="material-symbols-outlined me-2">
+                            <span class="material-symbols-outlined me-2">
                           gif_box
                         </span>
-                        <span class="material-symbols-outlined me-2">
+                            <span class="material-symbols-outlined me-2">
                           align_horizontal_left
                         </span>
-                        <span class="material-symbols-outlined me-2">
+                            <span class="material-symbols-outlined me-2">
                           sentiment_satisfied
                         </span>
-                        <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined">
                           event
                         </span>
-                    </div>
-                    <div class="twitter-color">
-                        <button type="button" class="btn tweet-button fw-bold">Tweetar</button>
+                        </div>
+                        <div class="twitter-color">
+                            <button type="button" class="btn tweet-button fw-bold">Tweetar</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
+    </section>
 
+
+    <section>
+        <div class="card">
+            <div class="card-body pe-0">
+                <div class="list-group">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="col-2">
+                            <p>ft perfil</p>
+                        </div>
+                        <div class="col-9">
+                            <div class="list-group-item border-0 p-0" aria-current="true">
+                                <div class="w-100 d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="tweet-name fw-bold">David Oliveira</p>
+                                        <p class="tweet-user text-muted">@davidoliveira_</p>
+                                        <p class="tweet-user text-muted">- Agora</p>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <p class="tweet-name">Hello World :) </p>
+                                </div>
+
+
+                                <div #lineIcons class="d-flex justify-content-between twitter-icons col-11">
+                                    <span class="material-symbols-outlined">
+                                        chat_bubble
+                                        </span>
+                                    <span class="material-symbols-outlined me-2">
+                                    cached
+                                  </span>
+                                    <span class="material-symbols-outlined">
+                                    favorite
+                                    </span>
+                                    <span class="material-symbols-outlined">
+                                      ios_share
+                                      </span>
+                                    <span class="material-symbols-outlined">
+                                        equalizer
+                                        </span>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="material-symbols-outlined teste">
+                                  more_horiz
+                                </span>
+                          </button>
+                                <ul class="dropdown-menu pb-0" aria-labelledby="dropdownMenuButton1">
+                                    <li>
+                                        <a class="dropdown-item pb-0" (click)="delete()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <div class="d-flex delete-button">
+                                                <span class="material-symbols-outlined pe-2">
+                                                  delete
+                                                </span>
+                                                <p>
+                                                    Delete
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Tweet?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Twitter search results.
+                </div>
+                <div class="modal-footer border-0 d-grid justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
-
-<section>
-    teste
-</section>
+</div>

@@ -9,12 +9,24 @@
 }
 
 .type-visualization-public,
-.twitter-icons {
-    font-size: 12px;
+.twitter-icons,
+.tweet-user {
+    font-size: 11px;
+}
+
+.tweet-name {
+    font-size: 13px;
+}
+
+.tweet-name,
+.tweet-user {
+    margin-right: 0.25rem;
+    border: 0;
 }
 
 .material-symbols-outlined {
     cursor: pointer;
+    font-weight: 250;
 }
 
 .type-visualization,
@@ -31,4 +43,19 @@
 
 .divider-line {
     opacity: 0.18;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    box-shadow: 0 0 0 0;
+}
+
+.delete-button {
+    color: red;
+    cursor: pointer;
+}
+
+.modal-content {
+    width: 80%;
+    vertical-align: middle;
 }
