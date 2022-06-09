@@ -1,0 +1,34 @@
+.twitter-background {
+    background-color: #e2e2e2;
+}
+
+.insert-tweet {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.type-visualization-public,
+.twitter-icons {
+    font-size: 12px;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+.type-visualization,
+.twitter-color {
+    color: #00ACEE;
+}
+
+.tweet-button {
+    background-color: #00ACEE;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: .75rem;
+}
+
+.divider-line {
+    opacity: 0.18;
+}
