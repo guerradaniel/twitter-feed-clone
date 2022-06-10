@@ -1,5 +1,9 @@
 .twitter-background {
     background-color: #e2e2e2;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
 }
 
 .insert-tweet {
