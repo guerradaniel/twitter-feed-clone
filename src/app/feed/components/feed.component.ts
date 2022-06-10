@@ -28,7 +28,7 @@ export class FeedComponent implements OnInit {
     this.showTweets();
     this.form = new FormGroup({
       name: new FormControl(''),
-      tweet: new FormControl('', Validators.maxLength(10)),
+      tweet: new FormControl('', Validators.maxLength(130)),
       photo: new FormControl(''),
       adress: new FormControl(''),
     });

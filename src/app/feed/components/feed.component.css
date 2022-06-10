@@ -6,6 +6,7 @@
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
+    resize: none;
 }
 
 .type-visualization-public,
@@ -58,4 +59,14 @@
 .modal-content {
     width: 80%;
     vertical-align: middle;
+}
+
+.text-length {
+    font-size: 1rem;
+    color: #000000;
+    margin: 0;
+}
+
+.photo {
+    border-radius: 40px;
 }
