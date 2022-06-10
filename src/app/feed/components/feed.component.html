@@ -18,8 +18,9 @@
                     <form [formGroup]="form" (ngSubmit)="tweetPost()">
 
                         <div class="form-group col-12">
-                            <input type="text" formControlName="tweet" class="form-control insert-tweet p-0" rows="1" placeholder="O que está acontecendo?">
+                            <textarea type="text" [(ngModel)]="form.tweet" formControlName="tweet" class="form-control insert-tweet p-0" rows="1" placeholder="O que está acontecendo?" rows="2" maxlength="10"></textarea>
                         </div>
+
                         <div class="d-flex type-visualization mb-4">
                             <div class="me-1">
                                 <span class="material-symbols-outlined" style="font-size: 15px;">
@@ -49,7 +50,10 @@
                               event
                             </span>
                             </div>
-                            <div class="twitter-color">
+                            <div class="twitter-color d-flex justify-content-between">
+                                <div class="">
+                                    <p>{{10 - form?.tweet?.length}}</p>
+                                </div>
                                 <button type="submit" class="btn tweet-button fw-bold">Tweetar</button>
                             </div>
                         </div>
@@ -63,19 +67,19 @@
 
 
     <section>
-        <div class="card" *ngIf="tweets.length > 0">
+        <div class="card" *ngIf="tweets.length >= 0">
             <div class="card-body pe-0 mb-2" *ngFor="let tweet of tweets">
                 <div class="list-group">
                     <div class="d-flex justify-content-between align-items-start">
                         <div class="col-2">
-                            <img src="{{tweet?.photo}}">
+                            <img src="{{data?.photo}}">
                         </div>
                         <div class="col-9">
                             <div class="list-group-item border-0 p-0" aria-current="true">
                                 <div class="w-100 d-flex justify-content-between">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <p class="tweet-name fw-bold">{{tweet?.name}}</p>
-                                        <p class="tweet-user text-muted">{{tweet?.adress}}</p>
+                                        <p class="tweet-name fw-bold">{{data?.name}}</p>
+                                        <p class="tweet-user text-muted">{{data?.adress}}</p>
                                         <p class="tweet-user text-muted">- Agora</p>
                                     </div>
                                 </div>
@@ -117,7 +121,7 @@
                           </button>
                                 <ul class="dropdown-menu pb-0" aria-labelledby="dropdownMenuButton1">
                                     <li>
-                                        <a class="dropdown-item pb-0" (click)="delete()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <a class="dropdown-item pb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <div class="d-flex delete-button">
                                                 <span class="material-symbols-outlined pe-2">
                                                   delete

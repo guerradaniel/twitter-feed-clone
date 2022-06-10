@@ -5,7 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { TweetInterface } from '../interfaces/tweet';
+import { FeedInterface } from '../interfaces/tweet';
+import { FeedService } from '../service/feed.service';
 
 @Component({
   selector: 'app-feed',
@@ -13,45 +14,46 @@ import { TweetInterface } from '../interfaces/tweet';
   styleUrls: ['./feed.component.css'],
 })
 export class FeedComponent implements OnInit {
-  public tweets!: TweetInterface[];
+  public tweets!: FeedInterface[];
+  data!: FeedInterface
   form: any;
-  tweet: any;
   photo = 'assets/img/ProfilePic.png';
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private readonly feed: FeedService
+  ) {
+  }
 
   ngOnInit(): void {
     this.showTweets();
     this.form = new FormGroup({
-      name: new FormControl('David Oliveira'),
-      tweet: new FormControl(''),
-      photo: new FormControl('assets/img/ProfilePic.png'),
-      adress: new FormControl('@davidoliveira_'),
+      name: new FormControl(''),
+      tweet: new FormControl('', Validators.maxLength(10)),
+      photo: new FormControl(''),
+      adress: new FormControl(''),
     });
   }
 
-  public delete() {
-    console.log('fui clicado');
-  }
+
 
   public tweetPost(): void {
-    const post: TweetInterface = this.form.value;
+    const post: FeedInterface = this.form.value;
     this.tweets.push(post);
     localStorage.setItem('BD', JSON.stringify(this.tweets));
-    this.form.reset();
+    this.form.get('tweet').reset();
   }
 
-  public onSubmit(): void {
-    this.tweets = Object.assign(this.tweet, this.form.value);
-    localStorage.setItem('BD', JSON.stringify(this.tweets));
-  }
+
 
   showTweets(): void {
-    if (localStorage.getItem('BD')) {
-      this.tweets = JSON.parse(localStorage.getItem('BD') || '{}');
-    } else {
-      this.tweets = [];
-    }
+    this.feed.getFeed().subscribe((data: FeedInterface) => {
+      this.data = data
+      if (localStorage.getItem('BD')) {
+        this.tweets = JSON.parse(localStorage.getItem('BD') || '{}');
+      } else {
+        this.tweets = [];
+      }
+    })
   }
 
   deleteItem(): void {
