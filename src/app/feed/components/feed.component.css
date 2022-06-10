@@ -70,3 +70,10 @@
 .photo {
     border-radius: 40px;
 }
+
+.button-delete {
+    width: 14rem;
+    font-weight: bold;
+    border-radius: 21px;
+    border-color: lightgray;
+}
